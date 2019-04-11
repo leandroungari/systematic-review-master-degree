@@ -1,0 +1,197 @@
+
+\usepackage[brazil]{babel}
+
+\usepackage[utf8]{inputenc}               %%% acentuação
+
+%\usepackage{chicago}                        %%% bibliografia
+%\usepackage[alf]{abntcite}
+\usepackage[comma,authoryear]{natbib}
+%\usepackage{apalike}                        %%% bibliografia
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}                         %%% para simbolo de 'marca registrada'
+
+\usepackage{setspace}                       %%% espacamento
+
+\usepackage[brazil]{varioref}               %%% referencias com página \vref
+
+\usepackage{indentfirst}                   %%% identa primeiro parágrafo
+
+                                            %%% definir títulos de seção
+\usepackage[sf,bf,compact,topmarks,calcwidth,pagestyles]{titlesec}
+%\usepackage{titletoc}
+
+\usepackage{etoolbox}
+
+\makeatletter
+\patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
+\patchcmd{\ttlh@hang}{\noindent}{}{}{}
+\makeatother
+
+\usepackage{fancybox}                       %%% boxes
+
+\usepackage{color}                          %%% Cores de fonte e fundo
+
+\usepackage{colortbl}                       %%% Cores em tabelas
+
+\usepackage{rotating}
+
+\usepackage{fancyvrb}                       %%% Inclusão de texto usando VerbatimInput
+
+%\usepackage{tocbibind}                      %%% Troca de Referencias para Referencias Bibliograficas
+%\settocbibname{Referências Bibliográficas}
+
+\usepackage{graphicx}                       %%% Para inclusão de gráficos
+\usepackage{subfigure}
+\usepackage{multirow}
+\usepackage{lscape}                         %%% to change the page layout to landscape (the default page layout is portrait) - this is used for large figures and tables - use: \begin{landscape} \end{landscape}
+\usepackage{supertabular}
+
+\usepackage{geometry}                        %%% dimensões do documento
+   \geometry{a4paper,top=30mm,bottom=20mm,left=30mm,right=20mm}
+
+
+                                            %%% propriedades do arquivo .pdf
+
+\hyphenation{es-ta-be-le-ci-das a-tu-al-men-te e-qui-pa-rar ob-ser-van-do}
+
+
+\usepackage{times}                          %%% Fonte de Letras
+
+\usepackage[T1]{fontenc}                    %%% Habilita fonte com hifenação em lingu não inglesa
+
+\usepackage{subfigure}
+
+\usepackage{hyperref}                       %%% cria links no arquivo .pdf
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue}
+                                            %%% comentar as linhas na versão para impressao
+
+\setcounter{secnumdepth}{4}                 %%% Habilita 4 nível de numeração
+
+%\setcounter{tocdepth}{4}                   %%% Mostra 4 níveis de numeração no Sumário
+
+\exhyphenpenalty = 10000                    %%% Para evitar a hyphenização explícita
+
+\font\numberfont= goxi2074 scaled 2500      %%% Fonte para o Número do Capítulo
+
+                                            %%% redefine o formato do título
+\titleformat{\chapter}[display]
+  {\normalfont\Large\sffamily
+  }
+  {
+%   \titlerule[3pt]
+%   \filright
+   \rule[32pt]{.7\linewidth}{4pt}
+   \hspace{-8pt}
+   \shadowbox{
+   \begin{minipage}{.20\linewidth}
+     \begin{center}
+       \textsc{\Large\chaptertitlename}\\
+       \vspace{1ex}
+       {\numberfont \thechapter}\\
+       \vspace{1ex}
+     \end{center}
+   \end{minipage}}
+  }
+  {0pt}
+  {\filcenter
+   \Huge \emph
+   }
+  [\hfill\rule{.8\textwidth}{0.75pt}\\
+     \vskip-1.8ex\hfill\rule{.7\textwidth}{2pt}]
+
+
+\newpagestyle{body}[\small\sffamily]{
+  \headrule
+%  \sethead[\textsl{\chaptername~\thechapter}][][\textsl{\chaptertitle}]
+%          {\ifthesection{
+%             \sethead[\textsl{\chaptername~\thechapter}][][\textsl{\chaptertitle}]
+%                     {\textsl{\thesection~\sectiontitle}}{}{}
+%          }
+%          {
+%          \sethead[\textsl{\chaptername~\thechapter}][][\textsl{\chaptertitle}]
+%          {\textsl{\thechapter~\chaptertitle}}{}{}
+%          }
+%          }{}{}
+  \sethead[\textsl{\chaptername~\thechapter}][][\textsl{\chaptertitle}]
+          {\textsl{\thesection~\sectiontitle}}{}{}
+
+%\sethead[\ifthechapter{\thechapter\quad}{}\textit{\chaptertitle}][][\thepage]%
+%          {\ifthesection{\thesection\quad \textit{\sectiontitle}}{\textit{\chaptertitle}}}{}{\thepage}
+
+%   \ifthesection{
+%             \sethead[\textsl{\chaptername~\thechapter}][][\textsl{\chaptertitle}]
+%                     {\textsl{\thesection~\sectiontitle}}{}{}
+%          }
+%          {
+%          \sethead[\textsl{\chaptername~\thechapter}][][\textsl{\chaptertitle}]
+%          {\textsl{\thechapter~\chaptertitle}}{}{}
+%          }
+
+  \setfoot{}{\thepage}{}
+}
+
+\newpagestyle{misc}{
+  \headrule
+  \sethead{\textsl{\chaptertitle}}{}{}
+  \setfoot{}{\thepage}{}
+}
+
+
+%código da Fer
+\newpagestyle{capa}{
+  \sethead{}{}{}
+  \setfoot{}{\thepage}{}
+}
+
+
+%%% macro para destacar a(s) primeira(s) letra do texto
+%%% é necessário ter a fonte courier instalada
+%
+%  um texto do tipo:
+%
+%  \begin{document}
+%    \versal{IN} THE beginning God created the heaven and the earth.  Now the
+%    earth was unformed and void, and darkness was upon the face of the
+%    deep; and the spirit of God hovered over the face of the waters.
+%  \end{document}
+%
+%  irá produzir algo como:
+%
+%  I I\  I THE beginning God  created the heaven and  the earth.
+%  I I \ I Now the earth was unformed and void, and darkness was
+%  I I  \I upon the face of the deep; and the spirit of God hov-
+%  ered over the face of the waters.
+
+%\font\largefont= pzcmi scaled 6500
+\font\largefont= pzcmi8t scaled 6500
+
+\newcommand{\versal}[1]{{\noindent
+    \setbox0\hbox{\largefont #1 }%
+    \count0=\ht0                   % height of versal
+    \count1=\baselineskip          % baselineskip
+    \divide\count0 by \count1      % versal height/baselineskip
+    \dimen1 = \count0\baselineskip % distance to drop versal
+    \advance\count0 by 1\relax     % no of indented lines
+    \dimen0=\wd0                   % width of versal
+    \global\hangindent\dimen0      % set indentation distance
+    \global\hangafter-\count0      % set no of indented lines
+    \hskip-\dimen0\setbox0\hbox to\dimen0{\raise-\dimen1\box0\hss}%
+    \dp0=0in\ht0=0in\box0}}
+
+
+%%%  define linha mais grossa para tabelas
+
+\newdimen\arrayruleHwidth
+\setlength{\arrayruleHwidth}{2pt} \makeatletter
+\def\Hline{\noalign{\ifnum0=`}\fi\hrule \@height \arrayruleHwidth
+\futurelet \@tempa\@xhline} \makeatother
+
+
+
+%table settings
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}

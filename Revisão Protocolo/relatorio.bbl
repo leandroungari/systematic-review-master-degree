@@ -1,0 +1,34 @@
+\begin{thebibliography}{4}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\input babelbst.tex
+\newcommand{\Capitalize}[1]{\uppercase{#1}}
+\newcommand{\capitalize}[1]{\expandafter\Capitalize#1}
+
+\bibitem[{Mar{\c{c}}al \bbletal{}(2016)Mar{\c{c}}al, Garcia, Eler, Junior
+  \bbland{}   Correia}]{marccal2016techniques}
+\textsc{Mar{\c{c}}al, I.; Garcia, R.~E.; Eler, D.~M.; Junior, C.~O.; Correia,
+  R.~C.}\ \ \  Techniques for the identification of crosscutting concerns: A
+  systematic literature review.\ \ \ \capitalize\bblin{}: \textit{Information
+  Technology: New Generations}, Springer, \bblpp{} 569--579, 2016.
+
+\bibitem[{Nakagawa \bbletal{}(2017)Nakagawa, Scannavino, Fabbri \bbland{}
+  Ferrari}]{nakagawa2017revisao}
+\textsc{Nakagawa, E.~Y.; Scannavino, K. R.~F.; Fabbri, S. C. P.~F.; Ferrari,
+  F.~C.}\ \ \  \emph{Revis{\~a}o sistem{\'a}tica da literatura em engenharia de
+  software: Teoria e pr{\'a}tica}.\ \ \ Elsevier Brasil, 2017.
+
+\bibitem[{Noblit \bbletal{}(1988)Noblit, Hare \bbland{}
+  Hare}]{noblit1988meta}
+\textsc{Noblit, G.~W.; Hare, R.~D.; Hare, R.}\ \ \  \emph{Meta-ethnography:
+  Synthesizing qualitative studies}, \bblvol{}~11.\ \ \ sage, 1988.
+
+\bibitem[{Petersen \bbletal{}(2008)Petersen, Feldt, Mujtaba \bbland{}
+  Mattsson}]{petersen2008systematic}
+\textsc{Petersen, K.; Feldt, R.; Mujtaba, S.; Mattsson, M.}\ \ \  Systematic
+  mapping studies in software engineering.\ \ \ \capitalize\bblin{}:
+  \textit{EASE}, 2008, \bblpp{} 68--77.
+
+\end{thebibliography}
